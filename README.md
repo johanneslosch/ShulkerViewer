@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/logo.png" width="128" alt="VanillaEnhancements logo"></p>
+
 # VanillaEnhancements
 
 A small **client-side** Fabric mod that makes shulker boxes and ender chests easier to manage, without changing anything on the server.
@@ -14,7 +16,7 @@ Works on vanilla servers, because nothing is sent to or changed on the server.
 
 If one category makes up at least a configurable share of a shulker box's non-empty slots (default **60 %**), the box is renamed client-side, e.g. `Shulker Box (Redstone)`. Boxes with a custom name (anvil) keep it.
 
-![Tooltip showing a renamed shulker box](docs/screenshots/tooltip.png)
+![Tooltip showing a renamed shulker box](assets/tooltip.png)
 
 Categories: Redstone, Food, Potions, Ores, Armor, Tools and Blocks.
 
@@ -22,13 +24,15 @@ Categories: Redstone, Food, Potions, Ores, Armor, Tools and Blocks.
 
 Boxes are tinted in the color of their category, in all inventory screens and in the hotbar. Opacity and the colored outline are adjustable.
 
-![Tinted shulker box in the inventory](docs/screenshots/tint.png)
+![Tinted shulker box in the inventory](assets/tint.png)
+
+![Tinted shulker box in the hotbar](assets/hotbar.png)
 
 ### Contents preview
 
 Hover a shulker box in any inventory screen and **right-click** (with an empty cursor) or press **V** to see what is inside, without placing it.
 
-![Shulker box preview](docs/screenshots/shulker-preview.png)
+![Shulker box preview](assets/shulker-preview.png)
 
 The preview closes with `Esc`, the inventory key, `V`, a right-click, or a click outside of it.
 
@@ -38,13 +42,13 @@ The preview closes with `Esc`, the inventory key, `V`, a right-click, or a click
 
 The same works for **ender chest items**. The client only learns the contents while the ender chest is open, so the preview shows what you saw last. Open the ender chest once per session to load it.
 
-![Ender chest preview](docs/screenshots/enderchest-preview.png)
+![Ender chest preview](assets/enderchest-preview.png)
 
 ### Settings
 
 Press **K** to open the settings screen (rebindable in the controls menu).
 
-![Settings screen](docs/screenshots/settings.png)
+![Settings screen](assets/settings.png)
 
 | Setting | Default | Description |
 | --- | --- | --- |

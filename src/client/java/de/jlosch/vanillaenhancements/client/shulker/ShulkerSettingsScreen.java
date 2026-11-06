@@ -1,5 +1,6 @@
 package de.jlosch.vanillaenhancements.client.shulker;
 
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractSliderButton;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.CycleButton;
@@ -70,6 +71,12 @@ public class ShulkerSettingsScreen extends Screen {
 
     private static Component opacityLabel(int percent) {
         return Component.translatable("vanillaenhancements.settings.opacity", percent);
+    }
+
+    @Override
+    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a) {
+        super.extractRenderState(graphics, mouseX, mouseY, a);
+        graphics.centeredText(this.font, this.title, this.width / 2, this.height / 6 - 16, 0xFFFFFFFF);
     }
 
     @Override
