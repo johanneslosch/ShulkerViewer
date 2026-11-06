@@ -1,10 +1,8 @@
 package de.jlosch.vanillaenhancements.mixin.client;
 
 import de.jlosch.vanillaenhancements.client.VanillaenhancementsClient;
-import de.jlosch.vanillaenhancements.client.shulker.ShulkerClassifier;
-import de.jlosch.vanillaenhancements.client.shulker.ShulkerPreviewScreen;
+import de.jlosch.vanillaenhancements.client.shulker.PreviewOpener;
 import com.mojang.blaze3d.platform.InputConstants;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.input.KeyEvent;
@@ -27,10 +25,9 @@ public abstract class AbstractContainerScreenKeyMixin {
         AbstractContainerScreen<?> self = (AbstractContainerScreen<?>) (Object) this;
         if (hoveredSlot == null || self.getFocused() instanceof EditBox
                 || !VanillaenhancementsClient.PREVIEW.matches(event)
-                || !ShulkerClassifier.isShulker(hoveredSlot.getItem())) {
+                || !PreviewOpener.open(self, hoveredSlot.getItem())) {
             return;
         }
-        Minecraft.getInstance().gui.setScreen(new ShulkerPreviewScreen(self, hoveredSlot.getItem()));
         cir.setReturnValue(true);
     }
 
@@ -39,10 +36,9 @@ public abstract class AbstractContainerScreenKeyMixin {
                                                          CallbackInfoReturnable<Boolean> cir) {
         AbstractContainerScreen<?> self = (AbstractContainerScreen<?>) (Object) this;
         if (event.button() != InputConstants.MOUSE_BUTTON_RIGHT || hoveredSlot == null || !self.getMenu().getCarried().isEmpty()
-                || !ShulkerClassifier.isShulker(hoveredSlot.getItem())) {
+                || !PreviewOpener.open(self, hoveredSlot.getItem())) {
             return;
         }
-        Minecraft.getInstance().gui.setScreen(new ShulkerPreviewScreen(self, hoveredSlot.getItem()));
         cir.setReturnValue(true);
     }
 }

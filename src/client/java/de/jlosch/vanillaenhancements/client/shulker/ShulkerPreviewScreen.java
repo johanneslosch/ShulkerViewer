@@ -12,31 +12,45 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemContainerContents;
 
-/** Read-only view of a shulker box's contents. */
+/** Read-only view of a container's contents (shulker box or cached ender chest). */
 public class ShulkerPreviewScreen extends Screen {
     private static final int COLS = 9;
-    private static final int ROWS = 3;
     private static final int CELL = 18;
 
     private final Screen parent;
     private final List<ItemStack> items;
+    private final Component hint;
+    private final int rows;
 
     public ShulkerPreviewScreen(Screen parent, ItemStack shulker) {
-        super(shulker.getHoverName());
+        this(parent, shulker.getHoverName(), contentsOf(shulker), null);
+    }
+
+    public ShulkerPreviewScreen(Screen parent, Component title, List<ItemStack> items, Component hint) {
+        super(title);
         this.parent = parent;
+        this.items = items;
+        this.hint = hint;
+        this.rows = Math.max(3, (items.size() + COLS - 1) / COLS);
+    }
+
+    private static List<ItemStack> contentsOf(ItemStack shulker) {
         ItemContainerContents contents = shulker.get(DataComponents.CONTAINER);
-        this.items = contents == null ? List.of() : contents.itemCopies().toList();
+        return contents == null ? List.of() : contents.itemCopies().toList();
     }
 
     @Override
     public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a) {
         super.extractRenderState(graphics, mouseX, mouseY, a);
         int left = this.width / 2 - COLS * CELL / 2;
-        int top = this.height / 2 - ROWS * CELL / 2;
-        graphics.fill(left - 6, top - 20, left + COLS * CELL + 6, top + ROWS * CELL + 6, 0xE0101010);
+        int top = this.height / 2 - rows * CELL / 2;
+        graphics.fill(left - 6, top - 20, left + COLS * CELL + 6, top + rows * CELL + 6, 0xE0101010);
         graphics.text(this.font, this.title, left, top - 14, 0xFFFFFFFF, false);
+        if (hint != null) {
+            graphics.centeredText(this.font, hint, this.width / 2, top + rows * CELL + 12, 0xFFFFAA00);
+        }
         ItemStack hovered = ItemStack.EMPTY;
-        for (int i = 0; i < COLS * ROWS; i++) {
+        for (int i = 0; i < COLS * rows; i++) {
             int x = left + (i % COLS) * CELL;
             int y = top + (i / COLS) * CELL;
             graphics.fill(x, y, x + CELL - 1, y + CELL - 1, 0xFF373737);
@@ -66,9 +80,9 @@ public class ShulkerPreviewScreen extends Screen {
     @Override
     public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
         int left = this.width / 2 - COLS * CELL / 2;
-        int top = this.height / 2 - ROWS * CELL / 2;
+        int top = this.height / 2 - rows * CELL / 2;
         boolean inside = event.x() >= left - 6 && event.x() < left + COLS * CELL + 6
-                && event.y() >= top - 20 && event.y() < top + ROWS * CELL + 6;
+                && event.y() >= top - 20 && event.y() < top + rows * CELL + 6;
         if (!inside || event.button() == InputConstants.MOUSE_BUTTON_RIGHT) {
             this.onClose();
             return true;
