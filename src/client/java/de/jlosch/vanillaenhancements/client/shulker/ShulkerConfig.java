@@ -17,6 +17,8 @@ public final class ShulkerConfig {
     public int thresholdPercent = 60;
     public boolean enableNaming = true;
     public boolean enableTint = true;
+    public int tintOpacityPercent = 44;
+    public boolean tintOutline = true;
 
     public static ShulkerConfig get() {
         return instance;
@@ -29,6 +31,7 @@ public final class ShulkerConfig {
                 if (loaded != null) {
                     instance = loaded;
                     instance.thresholdPercent = Math.max(1, Math.min(100, instance.thresholdPercent));
+                    instance.tintOpacityPercent = Math.max(0, Math.min(100, instance.tintOpacityPercent));
                 }
             } catch (IOException | RuntimeException ignored) {
                 // keep defaults on unreadable config

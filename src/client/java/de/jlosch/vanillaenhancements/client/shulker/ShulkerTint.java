@@ -8,13 +8,19 @@ public final class ShulkerTint {
     }
 
     public static void draw(GuiGraphicsExtractor graphics, ItemStack stack, int x, int y) {
-        if (!ShulkerConfig.get().enableTint) {
+        ShulkerConfig cfg = ShulkerConfig.get();
+        if (!cfg.enableTint) {
             return;
         }
         ShulkerCategory category = ShulkerClassifier.classify(stack);
         if (category != null) {
-            graphics.fill(x, y, x + 16, y + 16, 0x70000000 | category.rgb);
-            graphics.outline(x, y, 16, 16, 0xFF000000 | category.rgb);
+            int alpha = Math.round(cfg.tintOpacityPercent * 255 / 100f);
+            if (alpha > 0) {
+                graphics.fill(x, y, x + 16, y + 16, (alpha << 24) | category.rgb);
+            }
+            if (cfg.tintOutline) {
+                graphics.outline(x, y, 16, 16, 0xFF000000 | category.rgb);
+            }
         }
     }
 }

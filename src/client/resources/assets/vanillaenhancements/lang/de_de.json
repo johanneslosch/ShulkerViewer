@@ -1,10 +1,13 @@
 {
   "key.vanillaenhancements.settings": "Shulker-Einstellungen öffnen",
+  "key.vanillaenhancements.preview": "Shulkerkiste ansehen (Mauszeiger darüber)",
   "key.category.vanillaenhancements.main": "VanillaEnhancements",
   "vanillaenhancements.settings.title": "Shulkerkisten-Einstellungen",
   "vanillaenhancements.settings.threshold": "Schwellwert: %s%%",
   "vanillaenhancements.settings.naming": "Kisten benennen",
   "vanillaenhancements.settings.tint": "Kisten einfärben",
+  "vanillaenhancements.settings.opacity": "Tönung Deckkraft: %s%%",
+  "vanillaenhancements.settings.outline": "Tönung Rand",
   "vanillaenhancements.category.redstone": "Redstone",
   "vanillaenhancements.category.food": "Essen",
   "vanillaenhancements.category.potions": "Tränke",

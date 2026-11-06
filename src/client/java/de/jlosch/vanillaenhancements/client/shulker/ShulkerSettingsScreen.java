@@ -21,7 +21,7 @@ public class ShulkerSettingsScreen extends Screen {
         ShulkerConfig cfg = ShulkerConfig.get();
         int w = 200;
         int x = this.width / 2 - w / 2;
-        int y = this.height / 4;
+        int y = this.height / 6;
 
         this.addRenderableWidget(new AbstractSliderButton(x, y, w, 20, label(cfg.thresholdPercent),
                 (cfg.thresholdPercent - 1) / 99.0) {
@@ -41,8 +41,23 @@ public class ShulkerSettingsScreen extends Screen {
         this.addRenderableWidget(CycleButton.onOffBuilder(cfg.enableTint)
                 .create(x, y + 56, w, 20, Component.translatable("vanillaenhancements.settings.tint"),
                         (b, v) -> cfg.enableTint = v));
+        this.addRenderableWidget(new AbstractSliderButton(x, y + 84, w, 20, opacityLabel(cfg.tintOpacityPercent),
+                cfg.tintOpacityPercent / 100.0) {
+            @Override
+            protected void updateMessage() {
+                this.setMessage(opacityLabel((int) Math.round(this.value * 100)));
+            }
+
+            @Override
+            protected void applyValue() {
+                cfg.tintOpacityPercent = (int) Math.round(this.value * 100);
+            }
+        });
+        this.addRenderableWidget(CycleButton.onOffBuilder(cfg.tintOutline)
+                .create(x, y + 112, w, 20, Component.translatable("vanillaenhancements.settings.outline"),
+                        (b, v) -> cfg.tintOutline = v));
         this.addRenderableWidget(Button.builder(CommonComponents.GUI_DONE, b -> this.onClose())
-                .bounds(x, y + 96, w, 20).build());
+                .bounds(x, y + 152, w, 20).build());
     }
 
     private static int toPercent(double v) {
@@ -51,6 +66,10 @@ public class ShulkerSettingsScreen extends Screen {
 
     private static Component label(int percent) {
         return Component.translatable("vanillaenhancements.settings.threshold", percent);
+    }
+
+    private static Component opacityLabel(int percent) {
+        return Component.translatable("vanillaenhancements.settings.opacity", percent);
     }
 
     @Override

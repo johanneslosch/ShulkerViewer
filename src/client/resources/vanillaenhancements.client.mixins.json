@@ -4,6 +4,7 @@
   "package": "de.jlosch.vanillaenhancements.mixin.client",
   "compatibilityLevel": "JAVA_25",
   "client": [
+    "AbstractContainerScreenKeyMixin",
     "AbstractContainerScreenMixin",
     "HudMixin",
     "ItemStackMixin"

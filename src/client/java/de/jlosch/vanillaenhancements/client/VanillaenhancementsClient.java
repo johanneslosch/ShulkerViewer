@@ -15,6 +15,9 @@ public class VanillaenhancementsClient implements ClientModInitializer {
     private static final KeyMapping OPEN_SETTINGS = KeyMappingHelper.registerKeyMapping(
             new KeyMapping("key.vanillaenhancements.settings", InputConstants.KEY_K, CATEGORY));
 
+    public static final KeyMapping PREVIEW = KeyMappingHelper.registerKeyMapping(
+            new KeyMapping("key.vanillaenhancements.preview", InputConstants.KEY_V, CATEGORY));
+
     @Override
     public void onInitializeClient() {
         ShulkerConfig.load();
