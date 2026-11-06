@@ -1,0 +1,15 @@
+{
+  "key.vanillaenhancements.settings": "Shulker-Einstellungen öffnen",
+  "key.category.vanillaenhancements.main": "VanillaEnhancements",
+  "vanillaenhancements.settings.title": "Shulkerkisten-Einstellungen",
+  "vanillaenhancements.settings.threshold": "Schwellwert: %s%%",
+  "vanillaenhancements.settings.naming": "Kisten benennen",
+  "vanillaenhancements.settings.tint": "Kisten einfärben",
+  "vanillaenhancements.category.redstone": "Redstone",
+  "vanillaenhancements.category.food": "Essen",
+  "vanillaenhancements.category.potions": "Tränke",
+  "vanillaenhancements.category.ores": "Erze",
+  "vanillaenhancements.category.armor": "Rüstung",
+  "vanillaenhancements.category.tools": "Werkzeuge",
+  "vanillaenhancements.category.blocks": "Blöcke"
+}

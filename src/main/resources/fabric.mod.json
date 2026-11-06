@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "vanillaenhancements",
+  "version": "${version}",
+  "name": "VanillaEnhancements",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/vanillaenhancements/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "de.jlosch.vanillaenhancements.client.VanillaenhancementsDataGenerator"
+    ],
+    "client": [
+      "de.jlosch.vanillaenhancements.client.VanillaenhancementsClient"
+    ],
+    "main": [
+      "de.jlosch.vanillaenhancements.Vanillaenhancements"
+    ]
+  },
+  "mixins": [
+    "vanillaenhancements.mixins.json",
+    {
+      "config": "vanillaenhancements.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
