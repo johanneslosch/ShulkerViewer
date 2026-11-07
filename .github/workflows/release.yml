@@ -38,8 +38,8 @@ jobs:
           VERSION: ${{ steps.version.outputs.mod_version }}
         run: |
           gh release create "$TAG" \
-            "build/libs/VanillaEnhancements-${VERSION}.jar" \
-            "build/libs/VanillaEnhancements-${VERSION}-sources.jar" \
+            "build/libs/ShulkerViewer-${VERSION}.jar" \
+            "build/libs/ShulkerViewer-${VERSION}-sources.jar" \
             --target "$GITHUB_SHA" \
-            --title "VanillaEnhancements ${VERSION} (build ${{ github.run_number }})" \
+            --title "ShulkerViewer ${VERSION} (build ${{ github.run_number }})" \
             --generate-notes

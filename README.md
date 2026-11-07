@@ -1,6 +1,6 @@
-<p align="center"><img src="assets/logo.png" width="128" alt="VanillaEnhancements logo"></p>
+<p align="center"><img src="assets/logo.png" width="128" alt="ShulkerViewer logo"></p>
 
-# VanillaEnhancements
+# ShulkerViewer
 
 A small **client-side** Fabric mod that makes shulker boxes and ender chests easier to manage, without changing anything on the server.
 
@@ -58,7 +58,7 @@ Press **K** to open the settings screen (rebindable in the controls menu).
 | Tint opacity | 44 % | Opacity of the tint |
 | Tint outline | on | Draw a colored outline around the slot |
 
-Settings are stored in `config/vanillaenhancements.json`.
+Settings are stored in `config/shulkerviewer.json`.
 
 ## Controls
 

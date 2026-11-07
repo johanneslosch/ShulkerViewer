@@ -1,4 +1,4 @@
-package de.jlosch.vanillaenhancements.client.shulker;
+package de.jlosch.shulkerviewer.client.shulker;
 
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractSliderButton;
@@ -13,7 +13,7 @@ public class ShulkerSettingsScreen extends Screen {
     private final Screen parent;
 
     public ShulkerSettingsScreen(Screen parent) {
-        super(Component.translatable("vanillaenhancements.settings.title"));
+        super(Component.translatable("shulkerviewer.settings.title"));
         this.parent = parent;
     }
 
@@ -37,10 +37,10 @@ public class ShulkerSettingsScreen extends Screen {
             }
         });
         this.addRenderableWidget(CycleButton.onOffBuilder(cfg.enableNaming)
-                .create(x, y + 28, w, 20, Component.translatable("vanillaenhancements.settings.naming"),
+                .create(x, y + 28, w, 20, Component.translatable("shulkerviewer.settings.naming"),
                         (b, v) -> cfg.enableNaming = v));
         this.addRenderableWidget(CycleButton.onOffBuilder(cfg.enableTint)
-                .create(x, y + 56, w, 20, Component.translatable("vanillaenhancements.settings.tint"),
+                .create(x, y + 56, w, 20, Component.translatable("shulkerviewer.settings.tint"),
                         (b, v) -> cfg.enableTint = v));
         this.addRenderableWidget(new AbstractSliderButton(x, y + 84, w, 20, opacityLabel(cfg.tintOpacityPercent),
                 cfg.tintOpacityPercent / 100.0) {
@@ -55,7 +55,7 @@ public class ShulkerSettingsScreen extends Screen {
             }
         });
         this.addRenderableWidget(CycleButton.onOffBuilder(cfg.tintOutline)
-                .create(x, y + 112, w, 20, Component.translatable("vanillaenhancements.settings.outline"),
+                .create(x, y + 112, w, 20, Component.translatable("shulkerviewer.settings.outline"),
                         (b, v) -> cfg.tintOutline = v));
         this.addRenderableWidget(Button.builder(CommonComponents.GUI_DONE, b -> this.onClose())
                 .bounds(x, y + 152, w, 20).build());
@@ -66,11 +66,11 @@ public class ShulkerSettingsScreen extends Screen {
     }
 
     private static Component label(int percent) {
-        return Component.translatable("vanillaenhancements.settings.threshold", percent);
+        return Component.translatable("shulkerviewer.settings.threshold", percent);
     }
 
     private static Component opacityLabel(int percent) {
-        return Component.translatable("vanillaenhancements.settings.opacity", percent);
+        return Component.translatable("shulkerviewer.settings.opacity", percent);
     }
 
     @Override

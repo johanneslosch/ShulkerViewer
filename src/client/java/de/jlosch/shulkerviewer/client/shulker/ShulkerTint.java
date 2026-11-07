@@ -1,4 +1,4 @@
-package de.jlosch.vanillaenhancements.client.shulker;
+package de.jlosch.shulkerviewer.client.shulker;
 
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.world.item.ItemStack;

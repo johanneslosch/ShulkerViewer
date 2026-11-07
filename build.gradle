@@ -14,7 +14,7 @@ loom {
     splitEnvironmentSourceSets()
 
     mods {
-        "vanillaenhancements" {
+        "shulkerviewer" {
             sourceSet sourceSets.main
             sourceSet sourceSets.client
         }

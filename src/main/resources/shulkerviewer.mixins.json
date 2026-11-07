@@ -1,13 +1,9 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "de.jlosch.vanillaenhancements.mixin.client",
+  "package": "de.jlosch.shulkerviewer.mixin",
   "compatibilityLevel": "JAVA_25",
-  "client": [
-    "AbstractContainerScreenKeyMixin",
-    "AbstractContainerScreenMixin",
-    "HudMixin",
-    "ItemStackMixin"
+  "mixins": [
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,9 +1,9 @@
-package de.jlosch.vanillaenhancements.client.shulker;
+package de.jlosch.shulkerviewer.client.shulker;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import java.util.List;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
-import de.jlosch.vanillaenhancements.client.VanillaenhancementsClient;
+import de.jlosch.shulkerviewer.client.ShulkerViewerClient;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonEvent;
@@ -70,7 +70,7 @@ public class ShulkerPreviewScreen extends Screen {
 
     @Override
     public boolean keyPressed(KeyEvent event) {
-        if (this.minecraft.options.keyInventory.matches(event) || VanillaenhancementsClient.PREVIEW.matches(event)) {
+        if (this.minecraft.options.keyInventory.matches(event) || ShulkerViewerClient.PREVIEW.matches(event)) {
             this.onClose();
             return true;
         }

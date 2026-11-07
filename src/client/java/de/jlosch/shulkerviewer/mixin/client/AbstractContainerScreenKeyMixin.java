@@ -1,7 +1,7 @@
-package de.jlosch.vanillaenhancements.mixin.client;
+package de.jlosch.shulkerviewer.mixin.client;
 
-import de.jlosch.vanillaenhancements.client.VanillaenhancementsClient;
-import de.jlosch.vanillaenhancements.client.shulker.PreviewOpener;
+import de.jlosch.shulkerviewer.client.ShulkerViewerClient;
+import de.jlosch.shulkerviewer.client.shulker.PreviewOpener;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -21,10 +21,10 @@ public abstract class AbstractContainerScreenKeyMixin {
     protected @Nullable Slot hoveredSlot;
 
     @Inject(method = "keyPressed", at = @At("HEAD"), cancellable = true)
-    private void vanillaenhancements$preview(KeyEvent event, CallbackInfoReturnable<Boolean> cir) {
+    private void shulkerviewer$preview(KeyEvent event, CallbackInfoReturnable<Boolean> cir) {
         AbstractContainerScreen<?> self = (AbstractContainerScreen<?>) (Object) this;
         if (hoveredSlot == null || self.getFocused() instanceof EditBox
-                || !VanillaenhancementsClient.PREVIEW.matches(event)
+                || !ShulkerViewerClient.PREVIEW.matches(event)
                 || !PreviewOpener.open(self, hoveredSlot.getItem())) {
             return;
         }
@@ -32,7 +32,7 @@ public abstract class AbstractContainerScreenKeyMixin {
     }
 
     @Inject(method = "mouseClicked", at = @At("HEAD"), cancellable = true)
-    private void vanillaenhancements$previewOnRightClick(MouseButtonEvent event, boolean doubleClick,
+    private void shulkerviewer$previewOnRightClick(MouseButtonEvent event, boolean doubleClick,
                                                          CallbackInfoReturnable<Boolean> cir) {
         AbstractContainerScreen<?> self = (AbstractContainerScreen<?>) (Object) this;
         if (event.button() != InputConstants.MOUSE_BUTTON_RIGHT || hoveredSlot == null || !self.getMenu().getCarried().isEmpty()

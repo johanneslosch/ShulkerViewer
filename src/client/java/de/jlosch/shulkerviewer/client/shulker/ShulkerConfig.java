@@ -1,4 +1,4 @@
-package de.jlosch.vanillaenhancements.client.shulker;
+package de.jlosch.shulkerviewer.client.shulker;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -7,10 +7,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import net.fabricmc.loader.api.FabricLoader;
 
-/** Client-side settings, stored in config/vanillaenhancements.json. */
+/** Client-side settings, stored in config/shulkerviewer.json. */
 public final class ShulkerConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final Path FILE = FabricLoader.getInstance().getConfigDir().resolve("vanillaenhancements.json");
+    private static final Path FILE = FabricLoader.getInstance().getConfigDir().resolve("shulkerviewer.json");
     private static ShulkerConfig instance = new ShulkerConfig();
 
     /** Share of non-empty slots (in percent) one category needs to label the box. */

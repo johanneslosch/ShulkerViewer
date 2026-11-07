@@ -1,4 +1,4 @@
-package de.jlosch.vanillaenhancements.client.shulker;
+package de.jlosch.shulkerviewer.client.shulker;
 
 import java.util.ArrayList;
 import java.util.List;

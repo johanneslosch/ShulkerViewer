@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "vanillaenhancements",
+  "id": "shulkerviewer",
   "version": "${version}",
-  "name": "VanillaEnhancements",
+  "name": "ShulkerViewer",
   "description": "",
   "authors": [],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/vanillaenhancements/icon.png",
+  "icon": "assets/shulkerviewer/icon.png",
   "environment": "client",
   "entrypoints": {
     "fabric-datagen": [
-      "de.jlosch.vanillaenhancements.client.VanillaenhancementsDataGenerator"
+      "de.jlosch.shulkerviewer.client.ShulkerViewerDataGenerator"
     ],
     "client": [
-      "de.jlosch.vanillaenhancements.client.VanillaenhancementsClient"
+      "de.jlosch.shulkerviewer.client.ShulkerViewerClient"
     ],
     "main": [
-      "de.jlosch.vanillaenhancements.Vanillaenhancements"
+      "de.jlosch.shulkerviewer.ShulkerViewer"
     ]
   },
   "mixins": [
-    "vanillaenhancements.mixins.json",
+    "shulkerviewer.mixins.json",
     {
-      "config": "vanillaenhancements.client.mixins.json",
+      "config": "shulkerviewer.client.mixins.json",
       "environment": "client"
     }
   ],

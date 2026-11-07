@@ -1,0 +1,19 @@
+{
+  "key.shulkerviewer.settings": "Shulker-Einstellungen öffnen",
+  "key.shulkerviewer.preview": "Shulkerkiste ansehen (Mauszeiger darüber)",
+  "key.category.shulkerviewer.main": "ShulkerViewer",
+  "shulkerviewer.settings.title": "Shulkerkisten-Einstellungen",
+  "shulkerviewer.settings.threshold": "Schwellwert: %s%%",
+  "shulkerviewer.settings.naming": "Kisten benennen",
+  "shulkerviewer.settings.tint": "Kisten einfärben",
+  "shulkerviewer.settings.opacity": "Tönung Deckkraft: %s%%",
+  "shulkerviewer.settings.outline": "Tönung Rand",
+  "shulkerviewer.enderchest.unknown": "Öffne die Enderkiste einmal, um den Inhalt zu laden",
+  "shulkerviewer.category.redstone": "Redstone",
+  "shulkerviewer.category.food": "Essen",
+  "shulkerviewer.category.potions": "Tränke",
+  "shulkerviewer.category.ores": "Erze",
+  "shulkerviewer.category.armor": "Rüstung",
+  "shulkerviewer.category.tools": "Werkzeuge",
+  "shulkerviewer.category.blocks": "Blöcke"
+}

@@ -1,4 +1,4 @@
-package de.jlosch.vanillaenhancements.client.shulker;
+package de.jlosch.shulkerviewer.client.shulker;
 
 import java.util.List;
 import net.minecraft.client.Minecraft;
@@ -20,7 +20,7 @@ public final class PreviewOpener {
         }
         if (!stack.isEmpty() && stack.getItem() == Items.ENDER_CHEST) {
             List<ItemStack> cached = EnderChestCache.get();
-            Component hint = cached == null ? Component.translatable("vanillaenhancements.enderchest.unknown") : null;
+            Component hint = cached == null ? Component.translatable("shulkerviewer.enderchest.unknown") : null;
             mc.gui.setScreen(new ShulkerPreviewScreen(parent, stack.getHoverName(),
                     cached == null ? List.of() : cached, hint));
             return true;

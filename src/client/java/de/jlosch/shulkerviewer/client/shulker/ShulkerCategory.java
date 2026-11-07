@@ -1,4 +1,4 @@
-package de.jlosch.vanillaenhancements.client.shulker;
+package de.jlosch.shulkerviewer.client.shulker;
 
 import net.minecraft.network.chat.Component;
 
@@ -18,6 +18,6 @@ public enum ShulkerCategory {
     }
 
     public Component label() {
-        return Component.translatable("vanillaenhancements.category." + name().toLowerCase());
+        return Component.translatable("shulkerviewer.category." + name().toLowerCase());
     }
 }

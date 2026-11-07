@@ -1,0 +1,19 @@
+{
+  "key.shulkerviewer.settings": "Open Shulker Settings",
+  "key.shulkerviewer.preview": "Preview Shulker Box (hover)",
+  "key.category.shulkerviewer.main": "ShulkerViewer",
+  "shulkerviewer.settings.title": "Shulker Box Settings",
+  "shulkerviewer.settings.threshold": "Threshold: %s%%",
+  "shulkerviewer.settings.naming": "Rename boxes",
+  "shulkerviewer.settings.tint": "Tint boxes",
+  "shulkerviewer.settings.opacity": "Tint opacity: %s%%",
+  "shulkerviewer.settings.outline": "Tint outline",
+  "shulkerviewer.enderchest.unknown": "Open the ender chest once to load its contents",
+  "shulkerviewer.category.redstone": "Redstone",
+  "shulkerviewer.category.food": "Food",
+  "shulkerviewer.category.potions": "Potions",
+  "shulkerviewer.category.ores": "Ores",
+  "shulkerviewer.category.armor": "Armor",
+  "shulkerviewer.category.tools": "Tools",
+  "shulkerviewer.category.blocks": "Blocks"
+}

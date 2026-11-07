@@ -1,6 +1,6 @@
-package de.jlosch.vanillaenhancements.mixin.client;
+package de.jlosch.shulkerviewer.mixin.client;
 
-import de.jlosch.vanillaenhancements.client.shulker.ShulkerTint;
+import de.jlosch.shulkerviewer.client.shulker.ShulkerTint;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.Slot;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(AbstractContainerScreen.class)
 public abstract class AbstractContainerScreenMixin {
     @Inject(method = "extractSlot", at = @At("TAIL"))
-    private void vanillaenhancements$tintShulker(GuiGraphicsExtractor graphics, Slot slot, int mouseX, int mouseY, CallbackInfo ci) {
+    private void shulkerviewer$tintShulker(GuiGraphicsExtractor graphics, Slot slot, int mouseX, int mouseY, CallbackInfo ci) {
         ShulkerTint.draw(graphics, slot.getItem(), slot.x, slot.y);
     }
 }
