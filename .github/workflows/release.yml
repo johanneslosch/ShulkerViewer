@@ -14,6 +14,9 @@ concurrency:
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+    env:
+      CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+      CURSEFORGE_ID: ${{ vars.CURSEFORGE_ID }}
     steps:
       - uses: actions/checkout@v4
 
@@ -43,3 +46,18 @@ jobs:
             --target "$GITHUB_SHA" \
             --title "ShulkerViewer ${VERSION} (build ${{ github.run_number }})" \
             --generate-notes
+
+      - name: Upload to CurseForge
+        if: ${{ env.CURSEFORGE_TOKEN != '' && env.CURSEFORGE_ID != '' }}
+        uses: Kir-Antipov/mc-publish@v3.3.2
+        with:
+          curseforge-id: ${{ env.CURSEFORGE_ID }}
+          curseforge-token: ${{ env.CURSEFORGE_TOKEN }}
+          files: build/libs/ShulkerViewer-${{ steps.version.outputs.mod_version }}.jar
+          name: ShulkerViewer ${{ steps.version.outputs.mod_version }} (build ${{ github.run_number }})
+          version: ${{ steps.version.outputs.mod_version }}+build.${{ github.run_number }}
+          version-type: alpha
+          loaders: fabric
+          game-versions: "26.3"
+          dependencies: fabric-api(required)
+          changelog: Automated build ${{ github.run_number }} from ${{ github.sha }}
